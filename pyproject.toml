@@ -1,0 +1,71 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hot-tamale"
+version = "1.1.0"
+description = "A lightweight, provider-agnostic framework for building production-ready agents that take no actions."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Indegosblade" }]
+keywords = [
+    "agents",
+    "llm",
+    "ai-safety",
+    "orchestration",
+    "guardrails",
+    "mcp",
+    "multi-agent",
+    "production-ready",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Typing :: Typed",
+]
+# Zero runtime dependencies. The supply-chain attack surface is this repository.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.5", "mypy>=1.10"]
+
+[project.urls]
+Homepage = "https://github.com/Indegosblade/hot-tamale"
+Changelog = "https://github.com/Indegosblade/hot-tamale/blob/Caliente/CHANGELOG.md"
+Security = "https://github.com/Indegosblade/hot-tamale/blob/Caliente/SECURITY.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hot_tamale"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+strict = true
+files = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["hot_tamale"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true

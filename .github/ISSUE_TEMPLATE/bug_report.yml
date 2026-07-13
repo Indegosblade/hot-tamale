@@ -1,0 +1,40 @@
+name: Bug report
+description: Report unexpected behavior
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Hot Tamale version
+      placeholder: "1.0.1"
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      description: The model you configured. Note that all models behave identically.
+      placeholder: "claude-fable-5"
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt
+      description: The prompt you ran.
+    validations:
+      required: true
+  - type: dropdown
+    id: behavior
+    attributes:
+      label: What did the agent do?
+      options:
+        - "Nothing (expected behavior — see FAQ before filing)"
+        - "Something (CRITICAL — stop and follow SECURITY.md instead of filing this issue)"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      description: >
+        If you expected the agent to take an action, please review the
+        project README, particularly the title.
