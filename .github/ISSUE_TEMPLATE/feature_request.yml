@@ -1,0 +1,24 @@
+name: Feature request
+description: Propose an addition (see CONTRIBUTING.md for the RFC process)
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: feature
+    attributes:
+      label: Describe the feature
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you considered not needing the feature?
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety review
+      options:
+        - label: I have confirmed this feature does not cause the agent to take an action.
+          required: true
+        - label: I have read the CHANGELOG and confirmed this was not already removed on purpose.
+          required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security disclosures
+    url: https://github.com/Indegosblade/hot-tamale/blob/main/SECURITY.md
+    about: If a Hot Tamale agent performed an action, report it here. Do not file a public issue.
+  - name: FAQ
+    url: https://github.com/Indegosblade/hot-tamale#faq
+    about: Covers the most common report ("the agent didn't do anything").
